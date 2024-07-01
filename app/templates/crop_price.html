@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Crops</title>
+
+  <!-- Bootstrap link -->
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- style sheet -->
+
+  <style media="screen">
+    body {
+      background-image: url("https://images.unsplash.com/photo-1511735643442-503bb3bd348a?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y3JvcHxlbnwwfHwwfHx8MA%3D%3D");
+      background-size: cover;
+    }
+
+    /* .funky-text {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 20px;
+      text-shadow: 2px 2px 2px #000000;
+      color: #151015; 
+    } */
+  </style>
+  
+  
+</head>
+
+<body>
+  <!-- navigation bar -->
+  <header>
+    <div class="px-3 py-2 bg-white text-black">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start" >
+          <div class="">
+            <!-- <a href="/index" class="navbar-brand text-white text-white funky-text"><b>EasyAggriculture</b></a> -->
+
+
+            <a class="navbar-brand" href="/index">
+              <img src="{{ url_for('static', filename='logo.png') }}" alt="AgroSmart Logo" style="width: 70px; height: auto;">
+            </a>
+          </div>
+          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"></a>
+          
+          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+            <li><a href="/index" class="nav-link" style="color: black;">Home</a></li>
+            <li><a href="/crop_recommendation" class="nav-link" style="color: black;">Crop Recommendation</a></li>
+            <li><a href="/crop_price" class="nav-link " style="color: black;">Price Forecast</a></li>
+            <li><a href="/weather" class="nav-link" style="color: black;">Weather</a></li>
+            <li><a href="/contactus" class="nav-link" style="color: black;">Contact Us</a></li>
+            <!-- <li><a href="{{ url_for('logout') }}" class="nav-link" style="color: black;">Logout</a></li> -->
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- form space -->
+  <section>
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container h-100">
+        <div class="m-5 row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-4">
+                <h2 class="text-uppercase text-center mb-3 funky-text" style="font-size: 30px;">Price Forecast</h2>
+                <form method="POST" action="{{ url_for('crop_price') }}" class="funky-text text-center">
+
+                  <div class="form-floating mb-3">
+                    <select class="form-select funky-select" id="district" name="district" aria-label="Select District" required>
+                      <option value="" selected>Select District</option>
+                      <option value="Sangli">Sangli</option>
+                    </select>
+                    <label for="district">District Name</label>
+                  </div>
+                
+                  <div class="form-floating mb-3">
+                    <select class="form-select funky-select" id="market" name="market" aria-label="Select Market" required>
+                      <option value="" selected>Select Market</option>
+                      <option value="Aatpadi">Aatpadi</option>
+                      <option value="Sangli">Sangli</option>
+                      <option value="Islampur">Islampur</option>
+                      <option value="Palus">Palus</option>
+                      <option value="Vita">Vita</option>
+                      <option value="Tasgaon">Tasgaon</option>
+                    </select>
+                    <label for="market">Market Name</label>
+                  </div>
+                
+                  <div class="form-floating mb-3">
+                    <select class="form-select funky-select" id="commodity" name="commodity" aria-label="Select commodity" required>
+                      <option value="" selected>Select Commodity</option>
+                      <option value="Bajra(Pearl Millet/Cumbu)">Bajra(Pearl Millet/Cumbu)</option>
+                      <option value="Beans">Beans</option>
+                      <option value="Bitter gourd">Bitter gourd</option>
+                      <option value="Brinjal">Brinjal</option>
+                      <option value="Cabbage">Cabbage</option>
+                      <option value="Carrot">Carrot</option>
+                      <option value="Cauliflower">Cauliflower</option>
+                      <option value="Chilly Capsicum">Chilly Capsicum</option>
+                      <option value="Coriander(Leaves)">Coriander(Leaves)</option>
+                      <option value="Cucumbar(Kheera)">Cucumbar(Kheera)</option>
+                      <option value="Ridgeguard(Tori)">Ridgeguard(Tori)</option>
+                      <option value="Garlic">Garlic</option>
+                      <option value="Grapes">Grapes</option>
+                      <option value="Jowar(Sorghum)">Jowar(Sorghum)</option>
+                      <option value="Bhindi(Ladies Finger)">Bhindi(Ladies Finger)</option>
+                      <option value="Mango">Mango</option>
+                      <option value="Onion">Onion</option>
+                      <option value="Papaya">Papaya</option>
+                      <option value="Pomegranate">Pomegranate</option>
+                      <option value="Potato">Potato</option>
+                      <option value="Soyabean">Soyabean</option>
+                      <option value="Sweet Potato">Sweet Potato</option>
+                      <option value="Turmeric">Turmeric</option>
+                      <option value="Tomato">Tomato</option>
+                      <option value="Water Melon">Water Melon</option>
+                      <option value="Wheat">Wheat</option>
+                    </select>
+                    <label for="commodity">Commodity Name</label>
+                  </div>
+                
+                  <div class="form-floating mb-3">
+                    <input type="date" id="date" class="form-control funky-input" name="date" placeholder="Forecast Date" required oninput="setMinMaxDate()" />
+                    <label for="date">Forecast Date</label>
+                  </div>
+                
+                  <div align="center" class="d-flex justify-content-center pt-3">
+                    <input type="submit" class="btn btn-warning btn-lg ms-2 funky-button" value="Submit">
+                  </div>
+                
+                </form>
+              
+
+                  {% if z %}
+                  <div align="center" class="m-5">
+                    <p class="funky-text" style="color: green;">The predicted price of the {{commodity}} for {{x}} is ₹{{z}}/Quintal</p>
+                      <img src= {{img}} alt="Image" style="max-width: 50%; height: auto;">
+                    </div>
+                  {% endif %}
+
+                  {% if message %}
+                  <div align="center" class="m-5">
+                    <p class="funky-text" style="color: green;">{{message}}</p>
+                     
+                    </div>
+                  {% endif %}
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+function setMinMaxDate() {
+    var today = new Date();
+    var maxDate = new Date();
+    maxDate.setDate(today.getDate() + 10); // Add 10 days to today's date
+    var minDate = today.toISOString().split('T')[0]; // Format today's date as yyyy-mm-dd
+    var maxDateFormatted = maxDate.toISOString().split('T')[0]; // Format max date as yyyy-mm-dd
+
+    document.getElementById('date').setAttribute('min', minDate);
+    document.getElementById('date').setAttribute('max', maxDateFormatted);
+}
+</script>
+
+</body>
+
+</html>

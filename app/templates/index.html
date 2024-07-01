@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="static/favicon.png" type="static/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>AgroSmart</title>
+
+
+  <!-- bootstrap core css -->
+  <link href="{{ url_for('static', filename='bootstrap.css') }}" rel="stylesheet">
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" />
+
+  <!-- font awesome style -->
+  <link href="{{ url_for('static', filename='font-awesome.min.css') }}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+
+  <!-- responsive style -->
+  <link href="{{ url_for('static', filename='responsive.css') }}" rel="stylesheet">
+
+  <style>
+    .funky-text {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-size: 20px;
+      text-shadow: 2px 2px 2px #000000;
+      color: #151015; /* You can change the color as desired */
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section ">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+        
+          <a class="navbar-brand" href="/index">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="AgroSmart Logo" style="width: 70px; height: auto;">
+          </a>
+
+          <div>
+        </div>
+        
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  pl-lg-5">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/crop_recommendation"> Crop Recommendation</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/crop_price"> Price Forecast</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/weather"> Weather</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contactus"> Contact</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="products.html">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li> -->
+              </ul>
+            </div>
+           
+            <!-- <div class="quote_btn-container">
+              <a href="/logout">
+                <span>
+                  <b></b> 
+            
+                  <a class="navbar-brand" href="/index">
+                    <div style="text-align: center;">
+                        <img src="{{ url_for('static', filename='avatar.png') }}" alt="Avatar" style="width: 40px; height: auto;">
+                        <div style="font-size: 15px;">{{ user }}</div>
+                    </div>
+                </a>
+                
+        
+                  Logout
+                </span>
+                
+              </a>
+            </div> -->
+
+            <div class="quote_btn-container" onmouseover="showDropdown()" onmouseout="hideDropdown()">
+              <div class="dropdown" style="position: relative; display: inline-block;">
+                  <a class="navbar-brand" href="/index">
+                      <div style="text-align: center;">
+                          <img src="{{ url_for('static', filename='avatar.png') }}" alt="Avatar" style="width: 40px; height: auto;">
+                          <div style="font-size: 15px;">{{ user }}</div>
+                      </div>
+                  </a>
+                  <div id="dropdown-content" class="dropdown-content" style="position: absolute; top: 100%; left: 0; background-color: white; min-width: 160px; z-index: 1; display: none; padding: 10px;">
+                      <ul style="list-style-type: none; padding: 0; margin: 0;">
+                          <li><a href="/logout" style="display: block; padding: 10px 20px; margin-left: -40px; color: black; text-decoration: none;">Logout</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          
+          
+          
+          <script>
+            function showDropdown() {
+                var dropdown = document.getElementById("dropdown-content");
+                dropdown.style.display = "block";
+            }
+        
+            function hideDropdown() {
+                var dropdown = document.getElementById("dropdown-content");
+                dropdown.style.display = "none";
+            }
+        </script>
+        
+        
+          
+          
+                    
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div class="slider_bg_box">
+        <img src="static/slider.jpg" alt="">
+      </div>
+      <div id="customCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          
+  <div class="m-5 text-left mx-5 p-4 funky-text" style="color: white;">
+    <!-- <h3 class="display-5 my-5"><b>About Us</b></h3> -->
+    <p class="px-5 mx-5 text-black">
+      
+      <h3>At AgroSmart</h3>we bring cutting-edge technology to the world of farming, empowering farmers with precise tools and insights to optimize their yields and harvests. Our platform seamlessly integrates machine learning and deep learning models to provide accurate forecasts and analysis across various aspects of agriculture.
+      <!-- <br><br>
+      <b>Crop Recommendation</b><br>
+      Receive personalized crop recommendations based on your soil quality, climate conditions, and farming preferences. Our sophisticated recommendation engine analyzes various factors to suggest the most suitable crops for your land. Whether you're a beginner or an experienced farmer, our recommendations help you achieve optimal yields and profitability.
+      <br><br>
+      
+      <b>Crop Price Prediction</b><br>
+      Maximize your profits with our advanced crop price prediction tool. Leveraging the power of machine learning, we analyze market trends and historical data to forecast crop prices accurately. Plan your sales strategy and make informed decisions based on reliable price predictions.
+      <br><br>
+      <b>Weather Forecasting</b><br>
+      Stay ahead of the curve with our precise weather forecasting feature. Plan your farming activities effectively by accessing detailed weather predictions tailored to your location. From rainfall patterns to temperature fluctuations, our forecasts ensure that you make informed decisions for your crops. -->
+     
+     </div>
+    </div>
+     
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- end about section -->
+
+  <!-- about section -->
+
+  <section class="about_section about_section2 layout_padding ">
+    <div class="container">
+
+      <h1 style="font-size: 50px; text-align: center; margin-bottom: 80px;">Our Services</h1>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Crop Recommendation
+              </h2>
+            </div>
+            <p>
+              Receive personalized crop recommendations based on your soil quality, climate conditions, and farming preferences. Our sophisticated recommendation engine analyzes various factors to suggest the most suitable crops for your land. Whether you're a beginner or an experienced farmer, our recommendations help you achieve optimal yields and profitability.
+            </p>
+            <a href="/crop_recommendation">
+              Click Here
+            </a>
+          </div>
+        </div> 
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="static/quality1.jpeg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Price Forecast
+              </h2>
+            </div>
+            <p>
+              Maximize your profits with our advanced crop price prediction tool. Leveraging the power of machine learning, we analyze market trends and historical data to forecast crop prices accurately. Plan your sales strategy and make informed decisions based on reliable price predictions.
+            </p>
+            <a href="/crop_price">
+              Click Here
+            </a>
+          </div>
+        </div> 
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="static/price.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                Weather Forecast
+              </h2>
+            </div>
+            <p>
+              Stay ahead of the curve with our precise weather forecasting feature. Plan your farming activities effectively by accessing detailed weather predictions tailored to your location. From rainfall patterns to temperature fluctuations, our forecasts ensure that you make informed decisions for your crops.
+            </p>
+            <a href="/weather">
+              Click Here
+            </a>
+          </div>
+        </div> 
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="static/weather2.jpg" alt="">
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- client section -->
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          What says our customers
+        </h2>
+      </div>
+      <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+
+
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-7 mx-auto">
+                <div class="client_container">
+                  <div class="client_detail">
+                    <p>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i> &nbsp;
+                      AgroSmart has been an invaluable tool for our farming operation. With its accurate crop recommendations based on our soil conditions and climate, we've been able to optimize our crop selection and maximize our yield. The user-friendly interface makes it easy to input data and access recommendations, saving us time and effort in our decision-making process. Thanks to AgroSmart, we've seen significant improvements in our crop productivity and profitability. Highly recommended &nbsp;
+                      <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    </p>
+                  </div>
+                  <div class="img-box">
+                    <img src="static/avatar.png">
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Alina Johnson
+                    </h5>
+                    <h6>
+                      <span>
+                        Customer
+                      </span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-7 mx-auto">
+                <div class="client_container">
+                  <div class="client_detail">
+                    <p>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i> &nbsp;
+                      Using AgroSmart has revolutionized the way we approach farming. With its precise recommendations tailored to our specific soil composition and local climate, we've seen a remarkable increase in our crop yields. The platform's intuitive interface and real-time updates make it a breeze to navigate. AgroSmart has truly empowered us to make informed decisions and optimize our farming practices. We couldn't be happier with the results! &nbsp;
+                      <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    </p>
+                  </div>
+                  <div class="img-box">
+                    <img src="static/avatar.png">
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Alina Johnson
+                    </h5>
+                    <h6>
+                      <span>
+                        Customer
+                      </span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-7 mx-auto">
+                <div class="client_container">
+                  <div class="client_detail">
+                    <p>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i> &nbsp;
+                      I can't recommend AgroSmart enough! As a novice farmer, I was overwhelmed by the complexities of crop selection. However, AgroSmart simplified the process for me by providing personalized recommendations based on my farm's unique characteristics. The expert insights and guidance offered by the platform have been invaluable in helping me achieve success in my farming endeavors. Thanks to AgroSmart, I feel more confident and knowledgeable about my agricultural  &nbsp;
+                      <i class="fa fa-quote-right" aria-hidden="true"></i>
+                    </p>
+                  </div>
+                  <div class="img-box">
+                    <img src="static/avatar.png" alt="">
+                  </div>
+                  <div class="name">
+                    <h5>
+                      Alina Johnson
+                    </h5>
+                    <h6>
+                      <span>
+                        Customer
+                      </span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExample2Indicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="1"></li>
+          <li data-target="#carouselExample2Indicators" data-slide-to="2"></li>
+        </ol>
+
+
+      </div>
+    </div>
+  </section>
+  <!-- end client section -->
+
+  <!-- contact section -->
+  <!-- <section class="contact_section  layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <div class="heading_container">
+              <h2>
+                Contact Us
+              </h2>
+            </div>
+          
+              <form method="post" id="contactForm" name="contactForm">
+              <div>
+                <input name="name" id="name" type="text" placeholder="Your Name" />
+              </div>
+              <div>
+                <input name="email" id="email" type="email" placeholder="Email" />
+              </div>
+              <div>
+                <input name="subject" id="subject" type="number" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input name="message" id="message" type="text" class="message-box" placeholder="Message" />
+              </div>
+              <div class="btn_box">
+                <button>
+                  SEND
+                </button>
+              </div>
+              {% if message %}
+                  <div align="center" class="m-5">
+                    <p style="color: green;">{{ message }}</p>
+                  </div>
+                  {% endif %}
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- end contact section -->
+
+  <!-- info section -->
+  <section class="info_section">
+
+    <div class="container">
+      <div class="contact_nav">
+        <a href="">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          <span>
+            Call : +91 9021595654
+          </span>
+        </a>
+        <a href="">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <span>
+            Email : patilcj23@gmail.com
+          </span>
+        </a>
+        <a href="">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <span>
+            Sangli
+          </span>
+        </a>
+      </div>
+     
+      <!-- <div class="col-md-7 mx-auto px-0">
+        <div class="info_form_social_box">
+          <h4>
+            SIGN UP TO OUR NEWSLETTER
+          </h4>
+          <form action="">
+            <input type="text" placeholder="Enter Your Email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+          <div class="social_box">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+  </section>
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved
+        <!-- <a href="https://html.design/">Free Html Templates</a> -->
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+
+  <!-- jQery -->
+  <script src="static/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="static/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="static/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>
